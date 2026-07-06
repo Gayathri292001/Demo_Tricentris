@@ -1,5 +1,5 @@
-from Demo_Tricentis_Framework.pages.login_page import LoginPage
-from Demo_Tricentis_Framework.utilities import read_excel
+from pages.login_page import LoginPage
+from utilities import read_excel
 import pytest
 
 '''@pytest.mark.smoke
