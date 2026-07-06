@@ -1,11 +1,11 @@
 from selenium.webdriver import Edge,EdgeOptions
 from time import sleep
 import pytest
-O=EdgeOptions()
-O.add_experimental_option("detach",True)# To hold the browser
+Options=EdgeOptions()
+Options.add_experimental_option("detach",True)# To hold the browser
 @pytest.fixture
 def setup_and_teardown():
-    driver = Edge(O)
+    driver = Edge(Options)
     driver.maximize_window()
     driver.get("https://demowebshop.tricentis.com/")
     sleep(2)
