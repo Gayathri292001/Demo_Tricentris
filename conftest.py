@@ -1,11 +1,18 @@
-from selenium.webdriver import Edge,EdgeOptions
-from time import sleep
 import pytest
-Options=EdgeOptions()
-Options.add_experimental_option("detach",True)# To hold the browser
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
 @pytest.fixture
 def setup_and_teardown():
-    driver = Edge(Options)
+    options = Options()
+    options.add_argument("--headless=new")   # optional for CI
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+
+    service = Service(EdgeChromiumDriverManager().install())
+    driver = webdriver.Edge(service=service, options=options)
     driver.maximize_window()
     driver.get("https://demowebshop.tricentis.com/")
     sleep(2)
