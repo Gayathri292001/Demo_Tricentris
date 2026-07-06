@@ -1,5 +1,5 @@
 from time import sleep
-from Demo_Tricentis_Framework.pages.base_page import Basepage   ## import login_page
+from pages.base_page import Basepage   ## import login_page
 class LoginPage(Basepage):
     login_link =("link text","Log in")
     email= ("id","Email")
