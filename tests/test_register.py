@@ -1,4 +1,4 @@
-from Demo_Tricentis_Framework.pages.register import RegisterPage
+from pages.register import RegisterPage
 import pytest
 
 def test_register_page(setup_and_teardown):
