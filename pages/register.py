@@ -1,4 +1,4 @@
-from Demo_Tricentis_Framework.pages.base_page import Basepage
+from pages.base_page import Basepage
 from time import sleep
 class RegisterPage(Basepage):
     Reg_click = ("link text","Register")
